@@ -49,4 +49,16 @@ public class UserController {
         }
         return "插入失败";
     }
+    
+    @RequestMapping("/updateuser")
+    public String updateUser(){
+        User user = userService.getUserById(5);
+        user.setUserName("user1");
+        user.setPassword("user1");
+        boolean flg = userService.updateUser(user);
+        if (flg == true){
+            return "更新成功";
+        }
+        return "更新失败";
+    }
 }

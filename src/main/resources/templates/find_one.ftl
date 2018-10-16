@@ -6,8 +6,6 @@
 <link href="/css/index.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="container">
-		<h2>${msg}</h2>
-	</div>
+	${user.userName}
 </body>
 </html>

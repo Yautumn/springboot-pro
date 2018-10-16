@@ -6,8 +6,8 @@
 <link href="/css/index.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="container">
-		<h2>${msg}</h2>
-	</div>
+	<#list list as user>
+		<li> ${user.userName} ==== ${user.password}</li>
+	</#list>
 </body>
 </html>
