@@ -1,9 +1,7 @@
 package com.yautumn.controller;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -45,23 +43,5 @@ public class FreemarkController {
 		modelAndView.addObject("user",user);
 		return modelAndView;
 	}
-	@RequestMapping("test/adduser")
-	public ModelAndView addUserFreemark(@ModelAttribute("form")UserForm userForm) {
-		String username = userForm.getUserName();
-		String password = userForm.getPassword();
-		Date birthday = userForm.getBirthday();
-		User user = new User();
-		user.setBirthday(birthday);
-		user.setPassword(password);
-		user.setUserName(username);
-		boolean flg = userService.insertUser(user);
-		ModelAndView modelAndView = new ModelAndView("add_user");
-		if(flg) {
-			modelAndView.addObject("stats", "插入成功");
-		}else {
-			modelAndView.addObject("stats", "插入失败");
-			
-		}
-		return modelAndView;
-	}
+
 }
